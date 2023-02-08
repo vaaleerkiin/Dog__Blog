@@ -1,7 +1,8 @@
+// const Handlebars = require('handlebars');
 import lightGallery from 'lightgallery';
-// import lgZoom from 'lg-zoom';
 import Autoplay from '../plugins/autoplay/lg-autoplay.min';
 import Thumbnail from '../plugins/thumbnail/lg-thumbnail.min';
+import DynemicGallaryEl from './source/DynamicMainGallaryEl.json';
 const lgContainer = document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
   container: lgContainer,
@@ -9,15 +10,19 @@ const inlineGallery = lightGallery(lgContainer, {
 
   hash: false,
 
+  closeOnTap: true,
+
+  escKey: true,
+
   closable: false,
 
   showMaximizeIcon: true,
 
   appendSubHtmlTo: '.lg-item',
 
-  slideShowAutoplay: !0,
+  slideShowAutoplay: true,
 
-  slideDelay: 400,
+  slideDelay: 0,
   plugins: [Autoplay, Thumbnail],
   controls: true,
   dynamicEl: [
@@ -37,7 +42,33 @@ const inlineGallery = lightGallery(lgContainer, {
                 <p>Description of the slide 2</p>
             </div>`,
     },
+    ...CreateDynemicEl(),
   ],
 });
-
+console.log(DynemicGallaryEl);
 inlineGallery.openGallery();
+
+function SortElForDate() {
+  const arr = DynemicGallaryEl;
+  return arr.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+}
+console.log(SortElForDate());
+function CreateDynemicEl() {
+  return SortElForDate().map(el => {
+    let arr = el;
+    delete arr.header;
+    delete arr.description;
+    delete arr.date;
+
+    arr.subHtml = `<div class="lightGallery-captions">
+                <h4>${arr.header}</h4>
+                <p>${arr.description} ${arr.date}</p>
+            </div>`;
+    arr.src = `https://vaaleerkiin.github.io/Dog__Blog/${arr.src}`;
+    arr.thumb = `https://vaaleerkiin.github.io/Dog__Blog/${arr.thumb}`;
+    return arr;
+  });
+}
+console.log(CreateDynemicEl());
