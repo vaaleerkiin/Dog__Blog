@@ -14,6 +14,8 @@ const inlineGallery = lightGallery(lgContainer, {
 
   escKey: true,
 
+  controls: true,
+
   closable: false,
 
   showMaximizeIcon: true,
