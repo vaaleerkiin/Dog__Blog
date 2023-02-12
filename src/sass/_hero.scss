@@ -34,6 +34,13 @@
     width: 100%;
   }
 }
+.hero__text-wrap {
+  background-color: #997a5d;
+  border: 1px solid rgba(35, 35, 35, 0.308);
+  border-radius: 10px;
+  padding: 15px;
+}
+
 .hero__title-wrap {
   padding: 6px;
   background-color: #997a5d;
@@ -41,6 +48,8 @@
   border-radius: 6px;
   font-size: 22px;
   text-align: center;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 body.menu-open .hero__title {

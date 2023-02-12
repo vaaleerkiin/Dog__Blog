@@ -1,25 +1,33 @@
-const allNews = [
-  {
-    title:
-      'Сьогодні Пті вперше відвідала пляж з власником! Вона дуже задоволена та весела, навіть купалась в морі.',
-    img: 'https://zelenvsit.cx.ua/wp-content/uploads/2018/6/sif-2141.jpg',
-    date: '20/7/2019',
-  },
+import MainNewsEl from './source/MainNewsEl.json';
+function SortElForDate() {
+  const arr = MainNewsEl;
+  return arr.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+}
+function CreateNewsEl(quantity) {
+  const el = [];
+  for (let i = 0; i < quantity; i += 1) {
+    const SortEl = SortElForDate()[i];
 
-  {
-    title:
-      'Ми відкрили нову тренувальну ділянку для Пті! Вона дуже захоплюється новими задачами та іграми.',
-    img: 'http://i.otzovik.com/objects/b/100000/95554.png',
-    date: '12/8/2022',
-  },
-  {
-    title:
-      'Сьогодні ми відвідали ветеринара та все виявилося добре з Пті. Вона дуже весела та готова до нових пригод!',
-    img: 'https://storage-api.petstory.ru/resize/0x0x80/b4/4b/0f/b44b0f2cc2384e10b95249bc70c4a073.jpeg',
-    date: '21/12/2020',
-  },
-];
-
-() => {
-  const news = allNews.map(el => {});
-};
+    el.push(` <li class="news__item">
+          <div class="news__inf-wrap">
+            <div class="news__img-wrap">
+              <img
+                src="https://raw.githubusercontent.com/vaaleerkiin/Dog__Blog/main/src/${SortEl.src}"
+                alt="Фото до новини"
+              />
+            </div>
+            <div class="news__text-wrap">
+              <p>
+                ${SortEl.header} 
+              </p>
+              <p class="news__date">${SortEl.date}</p>
+              <button class="btn news__btn">Читати далі</button>
+            </div>
+          </div>
+        </li>`);
+  }
+  return el;
+}
+document.querySelector('.news__list').innerHTML = CreateNewsEl(4).join('');

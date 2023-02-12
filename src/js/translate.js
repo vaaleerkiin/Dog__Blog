@@ -17,34 +17,38 @@ const LangArr = {
   lng__inform__title: { ua: 'Про мене', en: 'About Me' },
 };
 
+if (!localStorage.getItem('lang')) {
+  localStorage.setItem('lang', 'en');
+}
+
 const refs = {
   navBtnEn: document.querySelector('#nav__en'),
   navBtnUa: document.querySelector('#nav__ua'),
   menuBtnEn: document.querySelector('#menu__en'),
   menuBtnUa: document.querySelector('#menu__ua'),
-  allLang: ['en', 'ua'],
 };
 
-refs.navBtnEn.addEventListener('click', () => changeURLLang('en'));
-refs.navBtnUa.addEventListener('click', () => changeURLLang('ua'));
-refs.menuBtnEn.addEventListener('click', () => changeURLLang('en'));
-refs.menuBtnUa.addEventListener('click', () => changeURLLang('ua'));
+refs.navBtnEn.addEventListener('click', () => {
+  localStorage.setItem('lang', 'en');
+  ChangeLang();
+});
+refs.navBtnUa.addEventListener('click', () => {
+  localStorage.setItem('lang', 'ua');
+  ChangeLang();
+});
+refs.menuBtnEn.addEventListener('click', () => {
+  localStorage.setItem('lang', 'en');
+  ChangeLang();
+});
+refs.menuBtnUa.addEventListener('click', () => {
+  localStorage.setItem('lang', 'ua');
+  ChangeLang();
+});
 
-function changeURLLang(lang) {
-  console.log(lang);
-  location.href = window.location.pathname + '#' + lang;
-  location.reload();
-}
-function changeWebLang() {
-  let hash = window.location.hash;
-  hash = hash.substring(1);
-  8;
-  if (!refs.allLang.includes(hash)) {
-    location.href = window.location.pathname + '#ua';
-    location.reload();
-  }
+function ChangeLang() {
+  let lang = localStorage.getItem('lang');
   for (const key in LangArr) {
-    document.querySelector(`.${key}`).innerHTML = LangArr[key][hash];
+    document.querySelector(`.${key}`).innerHTML = LangArr[key][lang];
   }
 }
-changeWebLang();
+ChangeLang();

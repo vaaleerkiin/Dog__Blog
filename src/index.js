@@ -1,4 +1,4 @@
-import './js/burger-menu';
 import './js/translate';
-import './js/news';
 import './js/main-gallary';
+import './js/burger-menu';
+import './js/news';

@@ -1,24 +1,23 @@
 {
-  "name": "parcel-project-template",
+  "name": "dogblog",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://vaaleerkiin.github.io/Dog__Blog__example/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html  "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/vaaleerkiin/Dog__Blog__example.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/vaaleerkiin/Dog__Blog__example/issues"
   },
   "dependencies": {
-    "handlebars": "^4.7.7",
     "lightgallery": "^2.7.1",
     "modern-normalize": "^1.1.0"
   },
