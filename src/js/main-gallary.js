@@ -29,10 +29,10 @@ const inlineGallery = lightGallery(lgContainer, {
   controls: true,
   dynamicEl: CreateDynemicEl(8),
 });
-
 setTimeout(() => {
   inlineGallery.openGallery();
 }, 300);
+
 function SortElForDate() {
   const arr = DynemicGallaryEl;
   return arr.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -53,12 +53,7 @@ function CreateDynemicEl(quantity) {
                     </div>`;
       el.src = `${el.src}`;
       el.thumb = `${el.thumb}`;
-      el.header;
-      el.description;
-      el.date;
       return el;
     })
     .slice(0, quantity);
 }
-
-lightGallery(document.getElementById('gallery-mixed-content-demo'));
