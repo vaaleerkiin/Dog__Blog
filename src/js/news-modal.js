@@ -62,10 +62,6 @@ function CreateDynemicEl(el, index) {
   }, 300);
 }
 
-function SortElForDate() {
-  const arr = MainNewsEl;
-  return arr.sort((a, b) => new Date(b.date) - new Date(a.date));
-}
 SortElForDate();
 function CreateNewsEl(quantity) {
   return SortElForDate()

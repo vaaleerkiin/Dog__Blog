@@ -2,7 +2,7 @@ import lightGallery from 'lightgallery';
 import Autoplay from '../plugins/autoplay/lg-autoplay.min';
 import Thumbnail from '../plugins/thumbnail/lg-thumbnail.min';
 import Video from '../plugins/video/lg-video.min';
-import DynemicGallaryEl from './source/MainData.json';
+import Data from './source/MainData.json';
 const lgContainer = document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
   container: lgContainer,
@@ -34,10 +34,11 @@ setTimeout(() => {
 }, 300);
 
 function SortElForDate() {
-  const arr = DynemicGallaryEl;
+  const arr = Data;
   return arr.sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
+export default SortElForDate();
 function CreateDynemicEl(quantity) {
   return SortElForDate()
     .map(el => {
