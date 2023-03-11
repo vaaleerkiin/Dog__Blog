@@ -1,7 +1,8 @@
 import lightGallery from 'lightgallery';
 import Autoplay from '../plugins/autoplay/lg-autoplay.min';
 import Thumbnail from '../plugins/thumbnail/lg-thumbnail.min';
-import DynemicGallaryEl from './source/DynamicMainGallaryEl.json';
+import Video from '../plugins/video/lg-video.min';
+import DynemicGallaryEl from './source/MainData.json';
 const lgContainer = document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
   container: lgContainer,
@@ -24,7 +25,7 @@ const inlineGallery = lightGallery(lgContainer, {
   slideShowAutoplay: true,
 
   slideDelay: 0,
-  plugins: [Autoplay, Thumbnail],
+  plugins: [Autoplay, Thumbnail, Video],
   controls: true,
   dynamicEl: CreateDynemicEl(8),
 });
@@ -40,24 +41,24 @@ function SortElForDate() {
 function CreateDynemicEl(quantity) {
   return SortElForDate()
     .map(el => {
-      const date = `${el.date}`;
-      const year = date.substr(0, 4);
-      const month = date.substr(4, 2);
-      const day = date.substr(6, 2);
-      const hour = date.substr(8, 2);
-      const minute = date.substr(10, 2);
-      el.date = year + '/' + month + '/' + day + '/' + hour + ':' + minute;
+      const date = new Date(el.date);
+      const years = `${date.getFullYear()}`;
+      const month = `${date.getMonth() + 1}`.padStart(2, 0);
+      const day = `${date.getDate()}`.padStart(2, 0);
+      const hours = `${date.getHours()}`.padStart(2, 0);
+      const minutes = `${date.getMinutes()}`.padStart(2, 0);
 
       el.subHtml = `<div class="lightGallery-captions">
-                <h4>${el.header}</h4>
-                <p> ${el.date}</p>
-            </div>`;
-      el.src = `https://raw.githubusercontent.com/vaaleerkiin/Dog__Blog/main/src/${el.src}`;
-      el.thumb = `https://raw.githubusercontent.com/vaaleerkiin/Dog__Blog/main/src/${el.thumb}`;
-      delete el.header;
-      delete el.description;
-      delete el.date;
+                        <p>${day}/${month}/${years} ${hours}:${minutes}</p>
+                    </div>`;
+      el.src = `${el.src}`;
+      el.thumb = `${el.thumb}`;
+      el.header;
+      el.description;
+      el.date;
       return el;
     })
     .slice(0, quantity);
 }
+
+lightGallery(document.getElementById('gallery-mixed-content-demo'));
