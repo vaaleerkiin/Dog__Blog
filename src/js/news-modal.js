@@ -1,8 +1,9 @@
 import lightGallery from 'lightgallery';
 import MainNewsEl from './source/MainData.json';
-import Autoplay from '../plugins/autoplay/lg-autoplay.min';
-import Thumbnail from '../plugins/thumbnail/lg-thumbnail.min';
-import Video from '../plugins/video/lg-video.min';
+import Autoplay from 'lightgallery/plugins/autoplay';
+import Thumbnail from 'lightgallery/plugins/thumbnail';
+import Video from 'lightgallery/plugins/video';
+import 'lightgallery/css/lightgallery-bundle.min.css';
 import DynemicGallaryEl from './source/MainData.json';
 
 const refs = {

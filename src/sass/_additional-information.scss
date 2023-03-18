@@ -1,6 +1,6 @@
-.about {
-  background: #00000010;
-}
+// .about {
+//   background: #00000010;
+// }
 
 .inform__title {
   display: inline-block;
@@ -43,9 +43,10 @@
 .lg-inline .lg-backdrop {
   background: #3b322b;
 }
-.lg-outer .lg-thumb-outer {
+.lg-thumb-outer.lg-thumb-align-middle.lg-grab {
   background: transparent;
 }
+
 .lg-toolbar,
 .lg-components,
 .lg-next,
@@ -53,7 +54,7 @@
   background: #00000010;
   border-radius: 5px;
 }
-.lg-progress-bar .lg-progress {
+.inline-gallery-container .lg-progress-bar .lg-progress {
   border-radius: 10px;
   background-color: #534438;
 }

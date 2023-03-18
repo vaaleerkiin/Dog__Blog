@@ -1,7 +1,8 @@
 import lightGallery from 'lightgallery';
-import Autoplay from '../plugins/autoplay/lg-autoplay.min';
-import Thumbnail from '../plugins/thumbnail/lg-thumbnail.min';
-import Video from '../plugins/video/lg-video.min';
+import Autoplay from 'lightgallery/plugins/autoplay';
+import Thumbnail from 'lightgallery/plugins/thumbnail';
+import Video from 'lightgallery/plugins/video';
+import 'lightgallery/css/lightgallery-bundle.min.css';
 import Data from './source/MainData.json';
 const lgContainer = document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
