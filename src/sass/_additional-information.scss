@@ -65,11 +65,14 @@
 .lg-item {
   width: 100%;
 }
-.lg-sub-html p {
+.lg-sub-html .lightGallery-captions {
+  display: inline-flex;
+}
+.lg-sub-html .lightGallery-captions p {
   margin: 5px;
   font-size: 12px;
 }
-.lg-sub-html h4 {
+.lg-sub-html .lightGallery-captions h4 {
   margin: 5px;
 }
 
