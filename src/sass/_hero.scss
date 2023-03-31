@@ -52,11 +52,6 @@
   font-weight: 500;
 }
 
-body.menu-open .hero__title {
-  opacity: 0;
-  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-}
-
 .hero__text-wrap {
   padding: 25px;
   display: flex;

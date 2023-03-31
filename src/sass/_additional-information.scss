@@ -40,50 +40,40 @@
     height: 620px;
   }
 }
-.lg-inline .lg-backdrop {
-  background: #3b322b;
-}
-.lg-thumb-outer.lg-thumb-align-middle.lg-grab {
-  background: transparent;
-}
+#myCarousel {
+  --f-carousel-slide-height: 60%;
+  --f-carousel-spacing: 10px;
 
-.lg-toolbar,
-.lg-components,
-.lg-next,
-.lg-prev {
-  background: #00000010;
-  border-radius: 5px;
+  height: calc(100% - 92px);
+  & .f-carousel__nav .f-button {
+    background-color: #00000050;
+  }
 }
-.inline-gallery-container .lg-progress-bar .lg-progress {
-  border-radius: 10px;
-  background-color: #534438;
-}
-.lg-show-autoplay .lg-progress-bar {
-  overflow: hidden;
-  border-radius: 10px;
-}
-.lg-item {
+.f-carousel__track .f-carousel__slide {
+  height: 100%;
   width: 100%;
-}
-.lg-sub-html .lightGallery-captions {
-  display: inline-flex;
-}
-.lg-sub-html .lightGallery-captions p {
-  margin: 5px;
-  font-size: 12px;
-}
-.lg-sub-html .lightGallery-captions h4 {
-  margin: 5px;
-}
-
-.lightGallery-captions {
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: #0000004a;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+  margin: 0;
+  & img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
 }
 
-.lg-outer.lg-grab img.lg-object {
-  border-radius: 5px;
-  object-fit: contain;
+.inline-gallery-container .f-carousel__dots {
+  display: none;
+}
+
+.f-thumbs__viewport {
+  background-color: #00000020;
+}
+.f-carousel__viewport.is-draggable {
+  padding-top: 12px;
+}
+.f-progress {
+  display: none;
 }

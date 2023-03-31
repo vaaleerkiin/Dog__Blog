@@ -1,61 +1,30 @@
-import lightGallery from 'lightgallery';
-import Autoplay from 'lightgallery/plugins/autoplay';
-import Thumbnail from 'lightgallery/plugins/thumbnail';
-import Video from 'lightgallery/plugins/video';
-import 'lightgallery/css/lightgallery-bundle.min.css';
-import Data from './source/MainData.json';
-const lgContainer = document.getElementById('inline-gallery-container');
-const inlineGallery = lightGallery(lgContainer, {
-  container: lgContainer,
-  dynamic: true,
+import { Carousel } from '@fancyapps/ui/dist/carousel/carousel.esm.js';
+import { de } from '@fancyapps/ui/dist/carousel/l10n/de.esm.js';
+import { Thumbs } from '@fancyapps/ui/dist/carousel/carousel.thumbs.esm.js';
+import { Autoplay } from '@fancyapps/ui/dist/carousel/carousel.autoplay.esm.js';
+import { Fancybox } from '@fancyapps/ui/dist/fancybox/fancybox.esm.js';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import '@fancyapps/ui/dist/carousel/carousel.thumbs.css';
+import '@fancyapps/ui/dist/carousel/carousel.css';
+import '@fancyapps/ui/dist/carousel/carousel.autoplay.css';
 
-  hash: false,
+import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js';
 
-  closeOnTap: true,
+const container = document.getElementById('myCarousel');
+const options = {
+  Autoplay: {
+    timeout: 5000,
+  },
+  transition: 'classic',
+  dynamicFrom: false,
+  Thumbs: {
+    type: 'classic',
+  },
+};
 
-  escKey: true,
+new Carousel(container, options, { Autoplay, Thumbs });
 
-  controls: true,
-
-  closable: false,
-
-  showMaximizeIcon: true,
-
-  appendSubHtmlTo: '.lg-item',
-
-  slideShowAutoplay: true,
-
-  slideDelay: 0,
-  plugins: [Autoplay, Thumbnail, Video],
-  controls: true,
-  dynamicEl: CreateDynemicEl(8),
+Fancybox.bind('[data-fancybox]', {
+  l10n: de,
+  groupAll: true,
 });
-setTimeout(() => {
-  inlineGallery.openGallery();
-}, 300);
-
-function SortElForDate() {
-  const arr = Data;
-  return arr.sort((a, b) => new Date(b.date) - new Date(a.date));
-}
-
-export default SortElForDate();
-function CreateDynemicEl(quantity) {
-  return SortElForDate()
-    .map(el => {
-      const date = new Date(el.date);
-      const years = `${date.getFullYear()}`;
-      const month = `${date.getMonth() + 1}`.padStart(2, 0);
-      const day = `${date.getDate()}`.padStart(2, 0);
-      const hours = `${date.getHours()}`.padStart(2, 0);
-      const minutes = `${date.getMinutes()}`.padStart(2, 0);
-
-      el.subHtml = `<div class="lightGallery-captions">
-                        <p>${day}/${month}/${years} ${hours}:${minutes}</p>
-                    </div>`;
-      el.src = `${el.src}`;
-      el.thumb = `${el.thumb}`;
-      return el;
-    })
-    .slice(0, quantity);
-}

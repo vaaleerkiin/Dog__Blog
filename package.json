@@ -18,8 +18,10 @@
     "url": "https://github.com/vaaleerkiin/Dog__Blog__example/issues"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.14",
     "lightgallery": "^2.7.1",
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "scrollmagic": "^2.0.8"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
