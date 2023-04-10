@@ -2,20 +2,20 @@
   "name": "dogblog",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://vaaleerkiin.github.io/Dog__Blog__example/",
+  "homepage": "https://vaaleerkiin.github.io/Dog__Blog/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html "
+    "build": "parcel build src/*.html --public-url /Dog__Blog/ "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vaaleerkiin/Dog__Blog__example.git"
+    "url": "git+https://github.com/vaaleerkiin/Dog__Blog.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vaaleerkiin/Dog__Blog__example/issues"
+    "url": "https://github.com/vaaleerkiin/Dog__Blog/issues"
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.14",
