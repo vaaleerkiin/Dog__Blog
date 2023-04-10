@@ -5,7 +5,7 @@
 .inform__title {
   display: inline-block;
   padding: 6px;
-  background-color: #997a5d;
+  background-color: $seconaryBgColor;
   border: 1px solid rgba(35, 35, 35, 0.308);
   border-radius: 6px;
   font-size: 22px;
@@ -18,7 +18,7 @@
 //   height: 700px;
 // }
 .gallary__wrap {
-  background-color: #997a5d;
+  background-color: $seconaryBgColor;
   border: 1px solid rgba(35, 35, 35, 0.308);
   border-radius: 10px;
   padding: 15px;
@@ -35,7 +35,7 @@
   height: 500px;
   border-radius: 10px;
   overflow: hidden;
-  background: #3b322b;
+  background: $primaryBgColor;
   @media screen and (min-width: 1201px) {
     height: 620px;
   }
@@ -46,7 +46,9 @@
 
   height: calc(100% - 92px);
   & .f-carousel__nav .f-button {
-    background-color: #00000050;
+    background-color: #00000020;
+    border-radius: 5px;
+    overflow: hidden;
   }
 }
 .f-carousel__track .f-carousel__slide {

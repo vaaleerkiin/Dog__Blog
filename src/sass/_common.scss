@@ -1,4 +1,10 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+$primaryBgColor: #1c2b2d;
+$seconaryBgColor: #92705b;
+$textColor: #000000;
+$iconColor: #92705b;
+$iconHover: #a8836d;
+
 a {
   text-decoration: none;
   color: currentColor;
@@ -20,6 +26,7 @@ li {
 }
 
 body {
-  background-color: #3b322b;
+  background-color: $primaryBgColor;
   font-family: 'Playfair Display', serif;
+  color: $textColor;
 }

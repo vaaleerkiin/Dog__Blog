@@ -35,7 +35,7 @@
   }
 }
 .hero__text-wrap {
-  background-color: #997a5d;
+  background-color: $seconaryBgColor;
   border: 1px solid rgba(35, 35, 35, 0.308);
   border-radius: 10px;
   padding: 15px;
@@ -43,7 +43,7 @@
 
 .hero__title-wrap {
   padding: 6px;
-  background-color: #997a5d;
+  background-color: $seconaryBgColor;
   border: 1px solid rgba(35, 35, 35, 0.308);
   border-radius: 6px;
   font-size: 22px;
@@ -63,8 +63,8 @@
   }
 }
 .hero__text {
-  background-color: #997a5d;
-  color: #202020;
+  background-color: $seconaryBgColor;
+  color: $textColor;
   font-weight: 500;
   font-size: 20px;
   @media screen and (max-width: 1200px) {

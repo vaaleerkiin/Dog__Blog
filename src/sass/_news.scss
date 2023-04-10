@@ -9,7 +9,7 @@
 .news__title {
   display: inline-block;
   padding: 6px;
-  background-color: #997a5d;
+  background-color: $seconaryBgColor;
   border: 1px solid rgba(35, 35, 35, 0.308);
   border-radius: 6px;
   font-size: 22px;
@@ -69,7 +69,7 @@
 
   padding: 16px;
 
-  background-color: #997a5d;
+  background-color: $seconaryBgColor;
   border: 1px solid rgba(35, 35, 35, 0.308);
   border-radius: 6px;
   width: 100%;
@@ -132,8 +132,8 @@
   font-family: 'Times New Roman', Times, serif;
   padding: 6px;
   border-radius: 6px;
-  background-color: #3b322b;
-  color: #80756c;
+  background-color: $primaryBgColor;
+  color: $iconColor;
   font-size: 18px;
   font-weight: 700;
   min-width: 100px;
