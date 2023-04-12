@@ -82,3 +82,14 @@ body {
   font-size: 22px;
   font-weight: 500;
 }
+
+.modal {
+  & a {
+    width: 100%;
+  }
+  & img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: contain;
+  }
+}

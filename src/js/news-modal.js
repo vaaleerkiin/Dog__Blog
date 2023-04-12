@@ -1,66 +1,16 @@
-import lightGallery from 'lightgallery';
-import MainNewsEl from './source/MainData.json';
-import Autoplay from 'lightgallery/plugins/autoplay';
-import Thumbnail from 'lightgallery/plugins/thumbnail';
-import Video from 'lightgallery/plugins/video';
-import 'lightgallery/css/lightgallery-bundle.min.css';
+import { Fancybox } from '@fancyapps/ui/dist/fancybox/fancybox.esm.js';
 import DynemicGallaryEl from './source/MainData.json';
 
 const refs = {
   newsList: document.querySelector('.news__list'),
   newsWrap: document.querySelector('.news__wrap'),
 };
-const options = {
-  dynamic: true,
-
-  hash: false,
-
-  closeOnTap: true,
-
-  escKey: true,
-
-  controls: true,
-
-  closable: false,
-
-  showMaximizeIcon: true,
-
-  appendSubHtmlTo: '.lg-item',
-
-  slideShowAutoplay: false,
-
-  slideDelay: 0,
-  plugins: [Autoplay, Thumbnail, Video],
-  controls: true,
-  dynamicEl: '',
-};
-
+Fancybox.bind('[data-fancybox-news]', {
+  // Your custom options
+});
 function SortElForDate() {
   const arr = DynemicGallaryEl;
   return arr.sort((a, b) => new Date(b.date) - new Date(a.date));
-}
-
-function CreateDynemicEl(el, index) {
-  let arr = el;
-  () => {
-    arr.subHtml = `<div class="lightGallery-captions">
-                        <p>${day}/${month}/${year} ${hour}:${minute}</p>
-                    </div>`;
-    arr.src = `${arr.src}`;
-    arr.thumb = `${arr.thumb}`;
-  };
-
-  const lgContainer = document.getElementById(
-    `inline-modal-gallary-container-${index}`
-  );
-
-  options.dynamicEl = [arr];
-  options.container = lgContainer;
-
-  const inlineModalGallery = lightGallery(lgContainer, options);
-  setTimeout(() => {
-    inlineModalGallery.openGallery();
-  }, 300);
 }
 
 SortElForDate();
@@ -94,7 +44,7 @@ function CreateNewsEl(quantity) {
         </li>`;
 
       creatModal(el, index);
-      CreateDynemicEl(el, index);
+
       return markup;
     });
 }
@@ -112,10 +62,12 @@ function creatModal(el, index) {
     `<div class="backdrop backdrop-${index} hidden" data-backdrop="${index}" >
         <div class="modal__wrap">
           <div class="modal">
-            <div
-              class="modal__gallary-wrap"
-              id="inline-modal-gallary-container-${index}"
-            ></div>
+            <a 
+               href="${el.src}"
+               data-thumb-src="${el.thumb}"
+               data-fancybox-news="news-gallery" >
+                <img src="${el.thumb}" />
+              </a>
             <div class="modal__info">
               <h4 class="modal__title">${el.header}</h4>
                 ${paragraph}

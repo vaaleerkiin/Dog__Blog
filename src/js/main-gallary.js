@@ -14,13 +14,12 @@ SortElForDate().map(({ src, thumb }) => {
   document.querySelector('.f-carousel__track').insertAdjacentHTML(
     'beforeend',
     `  <a
-                  class="f-carousel__slide"
-                  href="${src}"
-                  data-thumb-src="${thumb}"
-                  data-fancybox="video-gallery"
-                >
-                  <img data-lazy-src="${thumb}" />
-                </a>
+         class="f-carousel__slide"
+         href="${src}"
+         data-thumb-src="${thumb}"
+         data-fancybox="video-gallery" >
+          <img data-lazy-src="${thumb}" />
+        </a>
       `
   );
 });
