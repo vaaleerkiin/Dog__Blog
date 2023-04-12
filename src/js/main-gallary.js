@@ -29,7 +29,7 @@ const options = {
   Autoplay: {
     timeout: 5000,
   },
-  transition: 'classic',
+  transition: false,
   dynamicFrom: false,
   Thumbs: {
     type: 'classic',
