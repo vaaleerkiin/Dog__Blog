@@ -39,7 +39,6 @@ const options = {
 new Carousel(container, options, { Autoplay, Thumbs });
 
 Fancybox.bind('[data-fancybox]', {
-  l10n: de,
   groupAll: true,
 });
 
